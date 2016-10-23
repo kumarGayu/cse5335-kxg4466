@@ -1,0 +1,103 @@
+var express = require('express');
+var router = express.Router();
+
+router.get('/', function(req, res) {
+    res.render('index.html')
+});
+
+router.get('/data', function(req, res) {
+	res.json([{
+    "Name":"Kumar",
+    "Degree":"Masters",
+    "Major":"CSE",
+    "Age":27,
+    "Gender":"Male",
+    "Grade": 4.0,
+    "Latitude":32.454651,
+    "Longitude":-99.738304
+},{
+    "Name":"Anna",
+    "Degree":"Masters",
+    "Major":"CSE",
+    "Age":24,
+    "Gender":"Female",
+    "Grade": 3.6,
+    "Latitude":26.217982,
+    "Longitude":-98.417883
+},{
+    "Name":"Ash",
+    "Degree":"Masters",
+    "Major":"CSE",
+    "Age":26,
+    "Gender":"Male",
+    "Grade": 3.6,
+    "Latitude":32.525063,
+    "Longitude":-101.715847
+},{
+    "Name":"Manz",
+    "Degree":"Masters",
+    "Major":"CSE",
+    "Age":29,
+    "Gender":"Male",
+    "Grade": 3.0,
+    "Latitude":32.958681,
+    "Longitude":-96.835645
+},{
+    "Name":"Catherin",
+    "Degree":"Masters",
+    "Major":"CSE",
+    "Age":1,
+    "Gender":"Female",
+    "Grade": 3.5,
+    "Latitude":35.274119,
+    "Longitude":-102.667247
+},{
+    "Name":"Zach",
+    "Degree":"Masters",
+    "Major":"CSE",
+    "Age":31,
+    "Gender":"Male",
+    "Grade": 3.3,
+    "Latitude":31.654855,
+    "Longitude":-106.136902
+
+},{
+    "Name":"Victor",
+    "Degree":"Bachelors",
+    "Major":"CSE",
+    "Age": 25,
+    "Gender":"Male",
+    "Grade": 3.2,
+    "Latitude":27.78273,
+    "Longitude":-97.90985
+},{
+    "Name":"Malar",
+    "Degree":"Bachelor",
+    "Major":"CSE",
+    "Age":23,
+    "Gender":"Female",
+    "Grade": 3.1,
+    "Latitude":27.451627,
+    "Longitude":-99.093233
+},{
+    "Name":"Gulze",
+    "Degree":"PhD",
+    "Major":"ML",
+    "Age":35,
+    "Gender":"Female",
+    "Grade": 3.7,
+    "Latitude":26.408735,
+    "Longitude":-98.836695
+},{
+    "Name":"Harsh",
+    "Degree":"Masters",
+    "Major":"Biology",
+    "Age":1,
+    "Gender":"Female",
+    "Grade": 3.8,
+    "Latitude":27.218988,
+    "Longitude":-98.098093
+}]);
+});
+
+module.exports = router;
