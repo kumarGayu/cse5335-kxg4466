@@ -14,7 +14,7 @@ Additional Libraries:
 Commands to install and deploy:
   - npm install
   to install required packages from npm
-  - npm build 
+  - npm run serve
   to  build all the client side code
   - npm start
   to start the server
