@@ -9,6 +9,7 @@
   },
   "main": "ExpressServer.js",
   "scripts": {
+    "serve": "gulp serve",
     "start": "node ExpressServer.js"
   },
   "dependencies": {

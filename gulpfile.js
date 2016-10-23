@@ -33,6 +33,6 @@ gulp.task('js', function() {
 /*
 * serve task will be called
 */
-.task('serve', ['clean', 'js', 'server'], function() {
+.task('serve', ['clean', 'js'], function() {
     return gulp.watch(['app/*.js', 'app/**/*.js'], [ 'js', browserSync.reload]);
 })
