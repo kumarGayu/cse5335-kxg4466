@@ -35,10 +35,6 @@ var App = React.createClass({displayName: "App",
                         React.createElement("div", {className: "panel-body"}, React.createElement(Table, {data: this.state.data}))
                     ), 
                     React.createElement("div", {className: "panel panel-default"}, 
-                        React.createElement("div", {className: "panel-heading"}, React.createElement("strong", {className: "center-block"}, "Student Details")), 
-                        React.createElement("div", {className: "panel-body"}, React.createElement(Table, {data: this.state.data}))
-                    ), 
-                    React.createElement("div", {className: "panel panel-default"}, 
                         React.createElement("div", {className: "panel-heading center-block"}, React.createElement("strong", {className: "center-block"}, "Students on Map")), 
                         React.createElement("div", {className: "panel-body"}, React.createElement(GoogleMap, {data: this.state.data}))
                     ), 
@@ -50,10 +46,6 @@ var App = React.createClass({displayName: "App",
         }else{
             return (
                 React.createElement("div", {className: "container"}, 
-                    React.createElement("div", {className: "panel panel-default"}, 
-                        React.createElement("strong", null, "Kumar Jayaram Gayatri"), 
-                        React.createElement("strong", null, "MS in Computer Science at the university of Texas at Arlington")
-                    ), 
                     React.createElement("button", {className: "center-block btn btn-primary", onClick: this.onClick}, " !!! Click Here !!! ")
                 )
             );
@@ -238,32 +230,26 @@ var React = require('react');
 
 var TableCell = React.createClass({displayName: "TableCell",
     propTypes: {
-        clickable: React.PropTypes.bool,
         header: React.PropTypes.bool
     },
 
     getDefaultProps: function() {
         return {
-            clickable: false,
-            header: false
+           header: false
         };
     },
 
-    onClick: function(event) {
-        event.preventDefault();
+    // onClose: function(event) {
+    //     event.preventDefault();
 
-        if(this.props.onClick){
-            this.props.onClick();
-        }
-    },
+    //     if(this.props.onClose){
+    //         this.props.onClose();
+    //     }
+    // },
 
     render: function() {
         if(!this.props.header){
-            if(this.props.clickable){
-                return(React.createElement("td", null, this.props.data))
-            }else{
-                return(React.createElement("td", {onclick: this.onclick()}, this.props.data))
-            }
+            return(React.createElement("td", null, this.props.data))
         }else if(this.props.header){
             return(React.createElement("th", null, this.props.data))
         }
@@ -276,22 +262,19 @@ module.exports = TableCell;
 
 var React = require('react');
 var Tablecell = require('../components/TableCell');
-var GoogleMap = require('../components/GoogleMap');
 
 var TableRow = React.createClass({displayName: "TableRow",
     propTypes: {
         header: React.PropTypes.bool
     },
 
-    ononClick: function(event) {
-        event.preventDefault();
+    // onClose: function(event) {
+    //     event.preventDefault();
 
-        if(this.state.showTd){
-            this.setState({showTd:false})
-        }else{
-            this.setState({showTd:true})
-        }
-    },
+    //     if(this.props.onClose){
+    //         this.props.onClose();
+    //     }
+    // },
 
     render: function() {
         var me = this;
@@ -305,11 +288,8 @@ var TableRow = React.createClass({displayName: "TableRow",
             if(this.props.data){
                 var keys = Object.keys(this.props.data);
                 for (var i = 0;i<keys.length;i++){
-                    cells.push(React.createElement(Tablecell, {clickable: true, onClick: this.onClick(), data: this.props.data[keys[i]], header: me.props.header, key: 'td'+i}));
-                }
+                cells.push(React.createElement(Tablecell, {data: this.props.data[keys[i]], header: me.props.header, key: 'td'+i}));
             }
-            if(this.state.showTd){
-                cells.push(React.createElement("td", null, React.createElement(GoogleMap, {data: this.props.data})))
             }
         }
         return (        
@@ -321,7 +301,7 @@ var TableRow = React.createClass({displayName: "TableRow",
 });
 
 module.exports = TableRow;
-},{"../components/GoogleMap":3,"../components/TableCell":5,"react":199}],7:[function(require,module,exports){
+},{"../components/TableCell":5,"react":199}],7:[function(require,module,exports){
 "use strict";
 
 var React = require('react');
@@ -2774,8 +2754,7 @@ function is(x, y) {
   if (x === y) {
     // Steps 1-5, 7-10
     // Steps 6.b-6.e: +0 != -0
-    // Added the nonzero y check to make Flow happy, but it is redundant
-    return x !== 0 || y !== 0 || 1 / x === 1 / y;
+    return x !== 0 || 1 / x === 1 / y;
   } else {
     // Step 6.a: NaN == NaN
     return x !== x && y !== y;

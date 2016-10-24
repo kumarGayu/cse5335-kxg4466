@@ -34,10 +34,6 @@ var App = React.createClass({
                         <div className="panel-body"><Table data={this.state.data} /></div>
                     </div>
                     <div className="panel panel-default">
-                        <div className="panel-heading"><strong className="center-block">Student Details</strong></div>
-                        <div className="panel-body"><Table data={this.state.data} /></div>
-                    </div>
-                    <div className="panel panel-default">
                         <div className="panel-heading center-block"><strong className="center-block">Students on Map</strong></div>
                         <div className="panel-body"><GoogleMap data={this.state.data}/></div>
                     </div>
@@ -49,10 +45,6 @@ var App = React.createClass({
         }else{
             return (
                 <div className="container">
-                    <div className="panel panel-default">
-                        <strong>Kumar Jayaram Gayatri</strong>
-                        <strong>MS in Computer Science at the university of Texas at Arlington</strong>
-                    </div>
                     <button className="center-block btn btn-primary" onClick= {this.onClick}> !!! Click Here !!! </button>
                 </div>
             );
