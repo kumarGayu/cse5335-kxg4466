@@ -3,6 +3,35 @@
 github repo: https://github.com/kumarGayu/cse5335-kxg4466
 View website on: https://cse5335-kxg4466.herokuapp.com/
 
+Project 2
+
+Choosen MongoDB NoSQL as a data storage to retrieve the data from.
+  - MongoDB is a document storage which is easy to web data and highly scalable.
+  - Easy to understand and huge community which an help to resolve any issue.
+  - Very much comfortabe for me as compared other free databases such as postgres and redis.
+  - is good to store the non structured data.
+
+Difficult:
+  - Assynchronous handling of the result of the ajax request.
+  - Keeping track of global variables in the asynchronous functions of ajax.
+  - Making only 100 requests when more than 100 records in the DB.
+  - Storing only 20 records at any time.
+
+Easy:
+  - Setting up of the MongoDB.
+  - Animating the response and displaying.
+  - I have used same technologies as earlier so it was very easy for me to implement new client changes.
+
+My biggest concern 
+  - Is choosing the backend db and front end technologies.
+  - Handling Multiple response from different requests.
+  - following the procedures. nd creating the process of development using these technologies.
+
+
+
+project 1
+
+
 Client using NodeJS and ReactJS:
   - ReactJs is a client side framework which works on module development
   - This is very helpful to test each and every component in the realtime environment
