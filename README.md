@@ -55,7 +55,7 @@ Additional Libraries:
 
   - highcharts for graph development 
   - googl map apis to include map
-  - jQuery for Ajax reuests,
+  - axios for Ajax reuests, this is a npm package for making ajax requests 
   - Gulp for the ease of development
 
 Commands to install and deploy:
