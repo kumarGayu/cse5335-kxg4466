@@ -18,37 +18,29 @@ var App = React.createClass({
         };
     },
 
-    onClick: function (){
+    componentDidMount: function (){
         var me = this
         axios.get('/data').then(function(res){
             me.setState({data:res.data})
-        }); 
+        });
     },
-    
+
     render: function(){
-        if(this.state.data.length>0){
-            return (
-                <div className="container">
-                    <div className="panel panel-default">
-                        <div className="panel-heading"><strong className="center-block">Student Details</strong></div>
-                        <div className="panel-body"><Table data={this.state.data} /></div>
-                    </div>
-                    <div className="panel panel-default">
-                        <div className="panel-heading center-block"><strong className="center-block">Students on Map</strong></div>
-                        <div className="panel-body"><GoogleMap data={this.state.data}/></div>
-                    </div>
-                    <div className="panel panel-default">
-                        <Charts data={this.state.data}/>
-                    </div>
+        return (
+            <div className="container">
+                <div className="panel panel-default">
+                    <div className="panel-heading"><strong className="center-block">Student Details</strong></div>
+                    <div className="panel-body"><Table data={this.state.data} /></div>
                 </div>
-            );
-        }else{
-            return (
-                <div className="container">
-                    <button className="center-block btn btn-primary" onClick= {this.onClick}> !!! Click Here !!! </button>
+                <div className="panel panel-default">
+                    <div className="panel-heading center-block"><strong className="center-block">Students on Map</strong></div>
+                    <div className="panel-body"><GoogleMap data={this.state.data}/></div>
                 </div>
-            );
-        }
+                <div className="panel panel-default">
+                    <Charts data={this.state.data}/>
+                </div>
+            </div>
+        );
     }
 });
 

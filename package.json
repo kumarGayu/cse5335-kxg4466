@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.4.2",
     "browser-sync": "^2.16.0",
+    "browserify": "^14.3.0",
     "del": "^2.2.2",
     "express": "^4.11.0",
     "gulp": "^3.9.1",
